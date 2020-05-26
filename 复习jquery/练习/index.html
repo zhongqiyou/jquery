@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    ul {
+        list-style: none;
+    }
+    
+    ul>li {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        float: left;
+        border: 1px solid #000000;
+        margin: 10px;
+        text-align: center;
+    }
+    
+    ul>li>img {
+        width: 100px;
+        height: 100%;
+        /* display: none; */
+    }
+    
+    .box>img {
+        display: block;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>
+            <img src="img/1.jpg" alt="">
+            <!-- <p>one</p> -->
+        </li>
+        <li>
+            <img src="img/2.jpg" alt="">
+            <!-- <p>two</p> -->
+        </li>
+        <li>
+            <img src="img/3.jpg" alt="">
+            <!-- <p>three</p> -->
+        </li>
+        <li>
+            <img src="img/4.jpg" alt="">
+            <!-- <p>four</p> -->
+        </li>
+        <li>
+            <img src="img/5.jpg" alt="">
+            <!-- <p>five</p> -->
+        </li>
+        <li>
+            <img src="img/6.jpg" alt="">
+            <!-- <p>six</p> -->
+        </li>
+        <li>
+            <img src="img/7.jpg" alt="">
+            <!-- <p>seven</p> -->
+        </li>
+    </ul>
+</body>
+<script>
+    $(function() {
+        $("li").hover(function() {
+            var index = $(this).index();
+
+            $("li").eq(index).siblings().children().attr("src", "")
+            $("li").eq(index).children().attr("src", "img/" + (index + 1) + ".jpg");
+
+
+        }, function() {
+
+        })
+    })
+</script>
+
+</html>

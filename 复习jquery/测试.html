@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 200px;
+        border: 1px solid #cccccc;
+        word-wrap: break-word;
+        overflow: auto;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+    </ul>
+    <a href="https://www.baidu.com/">默认事件</a>
+    <button class="btn">执行jquery代码</button>
+    <div> divdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdiv</div>
+    <div class="box">我是一个盒子</div>
+    <div>我是盒子</div>
+    <div><span>111</span></div>
+    <div>
+        <p><span>111</span></p>
+    </div>
+
+    <input type="checkbox" checked>
+
+</body>
+<script>
+    // 常用入口函数
+    // $(function() {
+    //         console.log("常用入口函数");
+    //     })
+    // 等到Dom节点全部加载完，直接执行。原生（onload）要等资源（图片）加载完才执行
+
+    // 有与$声明一样时 ， 可改变声明
+    // var i = jQuery.noConflict();
+    // i(function() {
+    //     console.log("改变框架名称");
+    // })
+
+    // jquery接收参数
+    // 1.函数（页面加载） ， 2.字符串（通常是Dom获取 ， 代码片段） ， 3，接收Dom原生封装成jquery对象
+    // $(function() {})
+    // $("body")
+    // $("<div>创建元素</div>")
+    // var body = document.querySelector("body");
+    // console.log($(body));
+
+    // 原生的map和forEach 与 jquery中的map和each
+    let arr = [2, 4, 6, 8];
+    let falseArr = {
+            0: 2,
+            1: 4,
+            2: 6,
+            3: 8,
+            length: 4
+        }
+        // 原生
+        // arr.map(function(value, index) {
+        //     console.log(value, index);
+        // })
+        // arr.forEach(function(value, index) {
+        //     console.log(value, index);
+        // })
+
+    // 在此测试出原生的map和forEach不能遍历伪数组
+    // falseArr.map(function(value, index) {
+    //     console.log(value, index);
+    // })
+
+    // falseArr.forEach(function(value, index) {
+    //     console.log(value, index);
+    // })
+
+    // jquery
+    // $(arr).each(function(value, index) {
+    //     console.log(value, index);
+    // })
+    // $(falseArr).each(function(value, index) {
+    //     console.log(value, index);
+    // })
+    // $(arr).map(function(value, index) {
+    //     console.log(value, index);
+    // })
+    // $(falseArr).map(function(value, index) {
+    //     console.log(value, index);
+    // })
+    // 在此测试出jquery的map和each能遍历伪数组(这里也是和原生的区别)
+
+    // 常用静态方法
+    // 1.去掉两端空格 $.trim
+    // var str = "   123    "
+    // console.log("1" + str + "1");
+    // console.log("1" + $.trim(str) + "1");
+
+    // 2.判断是否为真数组 $,isArray
+    // console.log($.isArray(falseArr));
+    // console.log($.isArray(arr));
+
+    // 3.判断是否为函数
+    // let fn = function() {}
+    // console.log($.isFunction(fn));
+    // console.log($.isFunction(arr)); 
+
+    // 控制jquery代码何时执行 $.holdReardy(boolean):
+    // $.holdReady(true);
+    // $(function() {
+    //     console.log("控制执行");
+    // })
+
+    // var btn = document.querySelector(".btn");
+    // btn.onclick = function() {
+    //         $.holdReady(false);
+    //     }
+    // 注意只有jquery版本1.10.2才有此方法
+
+    // 内容选择器
+    // $(function() {
+    //     //  1.:empty 获取空的元素（元素中不包含子元素以及文本）
+    //     console.log($("div:empty"));
+
+    //     // 2.:parent 获取元素中包含文本或者子元素的元素
+    //     console.log($("div:parent"));
+
+    //     // 3.:contains 获取指定文本的元素      
+    //     console.log($("div:contains('是')"));
+
+    //     // 4.:has 获取指定包含子元素的元素
+    //     console.log($("div:has('span')"));
+    // })
+
+    // Dom节点属性操作 attr 与prop
+    // attr
+    // 设置节点属性和获取节点值
+    // $("div").attr("class", "this is a test");
+    // console.log($("div").attr("class"));
+
+    // 移除节点属性
+    // $("div").removeAttr("class");
+
+    // prop
+    // 设置节点属性和获取节点值
+    // $("div").prop("class", "this is a test");
+    // console.log($("div").prop("class"));
+
+    // 移除节点属性
+    // $("div").removeProp("class");
+
+    // 到这里会发现attr 与 prop 基本一样。但是注意了，看下面
+    // console.log($("input").attr("checked"));
+    // console.log($("input").prop("checked"));
+    // 你会发现attr返回的是 checked ， 而prop返回的是true（boolear）
+
+    // 所以有表单用prop ，反之用attr
+
+
+    // Dom类（class）操作
+    // 添加类addClass
+    // $("div").addClass("this is a test")
+
+    // 移除类
+    // $("div").removeClass("this");
+
+    // 切换类(有则移除 ， 无则添加)
+    // $("div").toggleClass("test");
+
+    // html 与 text (原生innerHTML与innerText)操作
+    // html添加 与 获取
+    // $("div").html("<h1>innerHTML</h1>");
+    // console.log($("div").html());
+
+    // text添加 与 获取
+    // $("div").text("<h1>innerText</h1>");
+    // console.log($("div").text());
+
+    // DOM添加样式
+    // 设置
+    // $("div").css({
+    // width: "100px",
+    // height: "100px",
+    // border: "1px solid #cccccc"
+    // })
+    // 获取 
+    // console.log($("div").css("width"));
+
+    // DOM获取 与 设置width  ， offset ， position
+    // 1.width():设置与获取元素的宽度（获取不包括边框之类值）
+    // 获取
+    // console.log($("div").width());
+    // 设置
+    // console.log($("div").width("100px"));
+
+    // 2.offset():设置与获取元素与窗口偏移量
+    // 获取
+    // console.log($("div").offset());
+    // 设置
+    // console.log($("div").offset({
+    // left: 100,
+    // top: 100
+    // }));
+
+    // 3. position(): 获取与父元素的偏移量
+    // 获取
+    // console.log($("div").position());
+    // 没有设置 ， 但可通过css({left: , top:})来设置
+
+
+    // 获取与设置滚动条的距离
+    // 获取
+    // console.log($("div").scrollTop());
+    // 设置
+    // console.log($("div").scrollTop(300));
+
+    // 事件绑定的两种方式
+    // $("button").click(function() {
+    // console.log("click")
+    // })
+
+    // $("button").on("click", function() {
+    // console.log("click")
+    // })
+    // 方式1与方式2的区别：
+    // 方式1：jquery只实现部分js事件 ， 所以只能绑定部分事件
+    // 方式2：on可以绑定js所有事件
+
+    // 事件移除
+    // $("button").on("mousedown", function() {
+    // console.log("mousedown")
+    // })
+    // $("button").on("mouseover", function() {
+    // console.log("mouseover")
+    // })
+    // $("button").on("mouseover", function() {
+    // console.log("mouseover2")
+    // })
+    // $("button").on("mouseout", function() {
+    // console.log("mouseout")
+    // })
+
+    // $("button").off("mouseout");
+
+    // 阻止事件冒泡 与 默认事件
+    // 事件冒泡
+    // $("div").click(function() {
+    // console.log("外层");
+    // })
+    // $("span").click(function(e) {
+    // console.log("内层");
+    // 阻止冒泡方式1
+    // e.stopPropagation();
+    // 阻止冒泡方式2
+    // return false;
+    // })
+
+    // 默认事件
+    // $("a").click(function(e) {
+    // 阻止默认方式1
+    // e.preventDefault()
+    // 阻止默认方式2
+    // return false;
+    // })
+
+    // 自动触发事件
+    // $("div").click(function() {
+    // alert("外层")
+    // })
+    // $("span").click(function(event) {
+    // alert("内层")
+    // })
+
+    // $("a").click(function(event) {
+    // alert("在默认跳转页面之前");
+    // })
+
+    // trigger自动触发后，会代有冒泡事件
+    // $("span").trigger("click");
+    // triggerHandler自动触发后，不会触发冒泡
+    // $("span").triggerHandler("click");
+
+    // $("a").trigger("click");
+    // $("a").triggerHandler("click");
+    // 测试得出两者在a标签中都是阻止默认事件
+
+    // 自定义事件触发
+    // $("div").on("custom", function() {
+    // alert("自定义事件")
+    // })
+    // $("div").trigger("custom");
+
+    // 事件委托
+    // $("button").click(function() {
+    // $("body").append("<li>123</li>");
+    // })
+
+    // $("body").delegate("li", "click", function() {
+    // console.log(123);
+    // })
+
+    //  鼠标移入移出事件结合
+    // $("div").hover(function() {
+    // console.log("移入")
+    // }, function() {
+    // console.log("移出");
+    // })
+
+    // 反选Dom(除了自己获取全部同级元素)
+    // console.log($("li").eq(2).siblings());
+
+    // CSS3动画 隐藏/显示
+    // 显示
+    // $("div").show(1000, function() {s
+    // console.log("结束回调")
+    // })
+    // 隐藏
+    // $("div").hide(1000, function() {
+    // console.log("结束回调")
+    // })
+
+    // 切换 toggle
+    // $("div").toggle(1000, function() {
+    // console.log("结束回调")
+    // })
+
+    // 自定义动画animate
+
+    // $('div').animate({
+    // width: 0,
+    // height: 0
+    // }, 5000)
+
+    // 节点操作
+    // 内部插入节点：
+    //   append():添加节点到内部元素的后面
+    //   prepend()：添加节点到内部元素的前面
+    // $("button").click(function() {
+    // $("ul").append("<li>this is a test</li>")
+    // $("ul").prepend("<li>this is a test</li>")
+    // })
+
+
+    // 外部插入节点：
+    //   after():添加节点到元素的后面
+    //   before()：添加节点到元素的前面
+
+    // $("button").click(function() {
+    // $("ul").after("<li>this is a test</li>")
+    // $("ul").before("<li>this is a test</li>")
+    // })
+
+    // 删除节点:
+    //  remove(参数1):删除指定节点.参数1：匹配删除（如：class ， id）
+    //  empty():清空指定节点子元素以及内容 ， 自身不会删除
+    // $("button").click(function() {
+    // $("div").remove(".box");
+    // $("div").empty();
+    // })
+    // 替换节点：
+    // replaceWith():替换指定所有的元素
+    // $("button").click(function() {
+    //     $("div").replaceWith("<h1>this is a test</h1>");
+    // })
+
+    // 复制节点：
+    //   clone(boolean):
+    //   true：复制节点 + 节点事件
+    //   false：复制节点
+
+    $("button").click(function() {
+        var ul = $("ul").clone(true);
+        console.log(ul);
+
+    })
+</script>
+
+
+</html>
