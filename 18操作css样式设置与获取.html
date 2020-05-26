@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    $(function () {
+        //   CSS样式设置：
+        // 1.逐个设置
+        // $("div").css("width" , "100px");
+        // $("div").css("height" , "100px");
+        // $("div").css("border" , "100px solid #000000");
+
+        // 2.链式设置
+        // $("div").css("width" , "100px").css("height" , "100px").css("border" , "100px solid #000000");
+
+        // 3.批量设置(推荐)
+        $("div").css({
+            width: "100px",
+            height: "100px",
+            background: "red"
+        })
+
+        //    CSS样式获取
+        console.log($("div").css("height"));
+        
+
+    })
+
+</script>
+
+</html>

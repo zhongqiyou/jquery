@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 500px;
+        height: 500px;
+        background: yellow;
+    }
+</style>
+
+<body>
+    <button>执行动画</button>
+    <button>停止动画</button>
+    <div></div>
+</body>
+<script>
+    $(function () {
+        //    delay:在动画过程中停顿时间
+        $("button").eq(0).click(function () {
+            $("div").animate({
+                width: 100,
+            }, 1000).delay(1000).animate({
+                height: 100
+            }, 1000)
+        })
+
+        // stop(参数1 ， 参数2 )：停止动画
+        // 情况一：stop() / stop(false) / stop(false , false):立即停止当前动画，继续执行后续动画
+        // 情况二：stop(true) / stop(true , false):立即停止当前与后续动画
+        // 情况三：stop(falase ，true) :立即完成当前动画 ，继续执行后续动画
+        // 情况三：stop(true ，true) :立即完成当前动画 ，停止后续动画
+
+        // 第一个参数为false时：立即停止当前动画 , 执行后续；
+        // 第一个参数为true时：立即停止当前与后续动画；
+        $("button").eq(1).click(function () {
+            // $("div").stop()
+            $("div").stop(true)
+            // $("div").stop(false , true)
+            // $("div").stop(true , true)
+
+        })
+
+
+
+
+    })
+</script>
+
+</html>

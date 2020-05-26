@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 500px;
+        height: 500px;
+        background: yellow;
+    }
+</style>
+
+<body>
+    <button>展开</button>
+    <button>收起</button>
+    <button>切换</button>
+    <div></div>
+
+</body>
+<script>
+    $(function () {
+        // 基本动画: slideDown(参数1 , 参数2)\slideUp(参数1 , 参数2)\slideToggle(参数1 , 参数2)
+        //  参数1：动画时间
+        //  参数2: 动画结束回调
+
+        $("button").eq(0).click(function () {
+            $('div').slideDown(1000)
+        })
+        $("button").eq(1).click(function () {
+            $('div').slideUp(1000)
+        })
+        $("button").eq(2).click(function () {
+            $('div').stop();
+            $('div').slideToggle(1000)
+        })
+
+        // 注意：由于动画是同步行为 ， 意识是：需要等待上一个动画完成之后才能执行下一个动画。
+        // 连续点击会导致执行堆积，会有过后执行。
+        // 解决方法：应当每次执行动画时，需要终止上一次未完成的画，直接执行下一个动画 stop()
+    })
+
+
+</script>
+
+</html>

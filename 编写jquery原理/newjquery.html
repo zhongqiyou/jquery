@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #000000;
+    }
+</style>
+
+<body>
+    <!-- <button class="btn">empty</button>
+    
+    <div class="item">one</div>
+    <div class="box">two <div  class="item">two-one</div></div>
+    <div>three <span class="item">文本</span></div>
+    <button class="item">item</button> -->
+
+    <!-- <p>this is a p1</p> -->
+    <p>this is a p2</p>
+    <div style="background: yellow;">
+        <li class="demo1" name="test1">我是第1个div</li>
+        <li class="demo2" name="test2">我是第2个div</li>
+        <li class="demo3" name="test3">我是第3个div</li>
+    </div>
+    <div style="background: green;">
+        <li>我是第1个div</li>
+        <li>我是第2个div</li>
+        <li>我是第3个div</li>
+    </div>
+    <div style="background: red;">
+        <li>我是第1个div</li>
+        <li>我是第2个div</li>
+        <li>我是第3个div</li>
+    </div>
+    <form>
+        <input type="text" class="aabb bb cc" value="moren">
+        <input type="text" class="bb cc dd" value="moren">
+        <input type="button" value="获取text值">
+    </form>
+
+    <button class="btn">btn-one</button>
+    <button class="btn">btn-two</button>
+</body>
+<script src="./newjquery.js"></script>
+<script>
+    // 1.传入： "" , null , undefined , NaN , 0 , false , 返回空的jquery对象
+    //  console.log(newJquery(""));
+    // 2.传入字符串：
+    //   1.可能是纯字符串
+    //   2.可能是html代码片段
+    // console.log(newJquery("       <div><p>1</p></div><div><p>2</p></div>  "));
+    // console.log(newJquery(".item"));
+
+    // var arr = [1, 2, 3, 4, 5];
+    // var objArr = {0:"1" , 1:"2" ,length:2}
+    // console.log({}.toString.apply(arr));
+    // console.log(objArr.toString());
+
+    // console.log(newJquery(objArr));
+    // console.log(newJquery(123));
+    // newJquery(function(){console.log("直接执行函数");})
+    // console.log(newJquery().jquery);
+
+    // console.log(newJquery("div").toArray());
+    // console.log(newJquery("div").get(-3));
+    // console.log(newJquery("div").eq(-1));
+    // console.log(newJquery("div").first());
+    // console.log(newJquery("div").last());
+    // var arr = [1, 2, 3, 4, 5];
+    // var objArr = { 0: 1, 1: 2, 2: 3, length: 3 }
+    // var obj = { name: "zqy", age: 21 }
+    // newJquery.each(obj, function (index, value) {
+    //     //   if(value == 3){return "false"}
+    //     console.log(this);
+    //     console.log(index, value);
+    // });
+    // newJquery(arr).each(function(value , index){
+    //  console.log(index , value);
+    // });
+
+    //   var result = newJquery.map(arr , function(value , index){
+    //      console.log(value , index);
+    //      if(value > 2){
+    //            return value+index
+    //      } 
+    //     });
+    //     console.log(result);
+
+    // var btn = document.getElementsByClassName("btn")[0];
+    // btn.onclick = function(){
+    //     console.log($("div").empty());
+    // }
+
+    // var btn = document.getElementsByClassName("btn")[0];
+    // btn.onclick = function(){
+    //     console.log($("div").remove(".item"));
+    // }
+
+    // console.log(newJquery("div").html("<span>span</span>"));
+
+    // console.log(newJquery("div").text("<span>span</span>"));
+
+    // var divs = document.querySelectorAll("div");
+    // var p = document.querySelectorAll("p");
+
+    // function appendTo(source, target) {
+    //     for (let i = 0; i < target.length; i++) {
+    //         for (let j = 0; j < source.length; j++) {
+    //             if (i === 0) {
+    //                 target[i].appendChild(source[j])
+    //             } else {
+    //                 let temp = source[j].cloneNode(true);
+    //                 target[i].appendChild(temp)
+    //             }
+    //         }
+    //     }
+    // }
+
+    // appendTo(p, divs)
+    // console.log(newJquery("p").appendTo("div"));
+    // var div = document.querySelector("div");
+    // var p = document.querySelector("p");
+    // function prependTo(source, target) {
+    //     target.insertBefore(source , target.firstChild);
+    // }
+
+    // prependTo(p , div);
+
+    //  console.log(newJquery("p").prependTo("div"));
+
+    // newJquery("div").append("p");
+    // newJquery("div").append("<span>我是span标签</span>");
+
+    // console.log(newJquery("div").append($("p")));
+
+    // console.log(newJquery("div").perpend("123"));
+    // console.log(newJquery("P").insertBefore("div"));
+
+    // newJquery("p").replaceAll("li");
+    //    console.log(newJquery("li").attr("class"));
+
+
+    //     console.log(newJquery("li").attr("class" , "this"));
+
+    //     console.log(newJquery("li").attr({
+    //         "calss":"123" , 
+    //         "name":"123"
+    //     }));
+
+
+    // console.log(newJquery("li").prop("age", "zqy"));
+
+    // console.log(newJquery("li").prop("age"));
+
+    // console.log(newJquery("li").prop({
+    //     "addr": "home",
+    //     "abc": "haha"
+    // }));
+
+    //    console.log(newJquery("div").css("height"));
+    //    console.log(newJquery("div").css("height" , "200px"));
+    //    console.log(newJquery("div").css({
+    //        "height":"100px" , 
+    //        "width":"100px"
+    //    }));
+
+    // console.log(newJquery("input").val());
+    // console.log(newJquery("input").val("sehzhizhi"));
+
+    // console.log(newJquery("input").hasClass("aabb"));
+
+    // console.log(newJquery('input').addClass("this is a test bb dd"))
+
+    // console.log(newJquery('input').removeClass("bb cc"));
+    // console.log(newJquery("input").toggleClass("bb cc"));
+
+    // var btns = document.querySelectorAll("button");
+
+    // 添加事件不覆盖执行
+    // function addDomFun(ele, funName, callBack) {
+    //     // 因为ie9以下版本不支持addEventListener方法
+    //     // 解决方案：attachEvent，与addEventListener不同处在于第一位参数 ， attachEvent添加方法名时需要加“on”
+    //     // 注意：attachEvent在ie9以下版本执行 ， 回调函数 ，不会按顺序执行
+
+    //     if (!ele.fun) {
+    //         ele.fun = {}
+    //     };
+    //     if (!ele.fun[funName]) {
+    //         ele.fun[funName] = [];
+    //         ele.fun[funName].push(callBack);
+    //         if (ele.addEventListener) {
+    //             ele.addEventListener(funName, function () {
+    //                 for (var i = 0; i < ele.fun[funName].length; i++) {
+    //                     ele.fun[funName][i]();
+    //                 }
+    //             })
+    //         } else {
+    //             ele.attachEvent("on" + funName, function () {
+    //                 for (var i = 0; i < ele.fun[funName].length; i++) {
+    //                     ele.fun[funName][i]();
+    //                 }
+    //             });
+    //         }
+    //     } else {
+    //         ele.fun[funName].push(callBack);
+    //     }
+
+    // }
+
+    // addDomFun(btns[0], "click", function () { alert("click1") });
+    // addDomFun(btns[0], "click", function () { alert("click2") });
+    // addDomFun(btns[0], "mouseenter", function () { alert("mouseenter") });
+    // addDomFun(btns[0], "mouseleave", function () { alert("mouseleave") });
+    function click1(){
+        alert("click1");
+    }
+    function click2(){
+        alert("click2");
+    }
+    function test1(){
+        alert("mouseenter");
+    }
+    function test2(){
+        alert("mouseleave");
+    }
+
+    // newJquery("button").on("click" , click1)
+    // newJquery("button").on("click" , click2)
+    // newJquery("button").on("mouseenter" , test1)
+    // newJquery("button").on("mouseleave" , test2)
+
+    // newJquery("button").off();
+    // newJquery("button").off("click");
+    // newJquery("button").off("click" , click2);
+
+    newJquery(".btn").on("click", click1)
+    newJquery(".btn").on("click", click2)
+    console.log();
+
+    var btns = newJquery(".btn").clone(true);
+    $("div").append(btns);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

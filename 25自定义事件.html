@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .box {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+    
+    .box-small {
+        width: 100px;
+        height: 100px;
+        background: blue;
+    }
+</style>
+
+<body>
+    <a href="https://www.baidu.com/"><span>百度</span></a>
+    <div class="box">
+        <div class="box-small"></div>
+    </div>
+
+    <form action="https://www.baidu.com/">
+        <input type="text">
+        <input type="submit" value="baidu">
+    </form>
+</body>
+
+<script>
+    $(function() {
+        //   自定义事件要满足：
+        // 1.事件只能用on来添加 ，因为jquery只是封装部分事件 ， 更不存在自定义事件
+        // 2.事件只能通过trigger来触发
+        $(".box-small").on("custom", function() {
+            alert("自定义事件")
+        })
+        $(".box-small").triggerHandler("custom");
+    })
+</script>
+
+</html>

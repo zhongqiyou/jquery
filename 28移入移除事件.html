@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000000;
+}
+
+</style>
+<body>
+    <div></div>
+</body>
+<script>
+    $(function(){
+        // 移入移除事件有两种：
+                         // 第一种：mouseover/mouseout 注意：当有子元素在内会多次执行事件，像冒泡一样
+                         //  第二种：mouseenter/mouseleave 解决第一种的注意
+        //   hover(参数1 ， 参数2):表示移除移除(像开关)
+                                // 填写一个参数时：移入移除同一事件触发
+                                // 填写两个参数时：移入移除，触发各自事件
+    
+      $("div").hover(function(){
+          alert("进来");
+      } , function(){
+          alert("出去")
+      })
+    })
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+    <script src="test.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+    //问题：导入文件时 ， 两个文件定义 $ 函数。会导致后面的覆盖前面的。
+    // 解决：取消 $ 来定义函数。取消函数：jQuery.noConflict()也可以重新定义函数符号 。例如：let test = jQuery.noConflict;
+    //   如果取消：用jQuery代替$ ， 如果重新定义：用 test（定义符）来代替$
+    let test = jQuery.noConflict()
+    test(function () {
+        alert("hello");
+    })
+
+</script>
+
+</html>

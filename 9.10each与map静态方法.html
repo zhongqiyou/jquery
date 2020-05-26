@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    // 原生forEach和map与jquery中each和map区别:
+    //  原生:forEack和map方法不能遍历伪数组
+    //  jquery:each和map方法能遍历伪数组
+
+    $(function () {
+        let $arr = [2, 4, 6, 8];
+        let $new = { 0: 2, 1: 4, 2: 6, 3: 8, length: 4 }
+        //  each:
+        $.each($arr, (value, index) => {
+            console.log(value, index);
+        })
+        $.each($new, (value, index) => {
+            console.log(value, index);
+        })
+
+        console.log("``````````````````````````````````````````````")
+        // map：
+        $.map($arr, (value, index) => {
+            console.log(value, index);
+        })
+        $.map($new, (value, index) => {
+            console.log(value, index);
+        })
+
+        console.log("``````````````````````````````````````````````")
+        // each与map中的区别
+        // each:返回值为自身数组;不能再元素遍历过程中对元素处理。
+        // map:返回值为空（不加工情况下）；可在遍历过程中对元素处理
+        // 例如map：
+      let result = $.map($arr , function(value , index){
+            console.log(value , index);
+            return value+index;
+        })
+       console.log(result)
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>事件绑定</button>
+</body>
+<script>
+    $(function() {
+        //    两种绑定方式：1. eventName(fun)|2.on(eventName,fun)
+        //  方式1：
+        $("button").click(function() {
+            alert("123");
+        });
+
+        // 方式2：
+        $("button").on("click", function() {
+            alert("world");
+        })
+
+        // 方式1与方式2的区别：
+        // 方式1：jquery只实现部分js事件 ， 所以只能绑定部分事件
+        // 方式2：on可以绑定js所有事件
+
+        // 注意：两者可以在同一个元素里面添加多个事件 ， 不会覆盖
+    })
+</script>
+
+</html>

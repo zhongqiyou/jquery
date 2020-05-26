@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+    //  $.trim()去除字符串的左右空格
+    $(function () {
+        let $str = "     ===str===     ";
+        $str = $.trim($str);
+        console.log("1" + $str + "1");
+
+        // 真数组
+        let $arr = [1, 2];
+        // 伪数组
+        let $arrlike = { 0: 2, 1: 4, length: 2 }
+        // 对象
+        let obj = { "name": "zqy", age: 21 }
+        // 函数
+        let fn = function () { }
+        // window对象
+        let win = window
+
+        // $.isArray()：判断是否为真数组
+        console.log($.isArray($arr));
+
+        // $.isFunction()：判断是否为函数
+        console.log($.isFunction(fn));
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

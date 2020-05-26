@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>节点控制</button>
+    <ul>
+        <li class="test">one</li>
+        <li>two</li>
+        <li class="test">three</li>
+    </ul>
+    <div>我是div</div>
+</body>
+<script>
+    // 内部插入节点：
+    //   append():添加节点到内部元素的后面
+    //   prepend()：添加节点到内部元素的前面
+    // 外部插入节点：
+    //   after():添加节点到元素的后面
+    //   before()：添加节点到元素的前面
+    // 删除节点:
+    //  remove(参数1):删除指定节点.参数1：匹配删除（如：class ， id）
+    //  empty():清空指定节点子元素以及内容 ， 自身不会删除
+    // 替换节点：
+    // replaceWith():替换指定所有的元素
+    // 复制节点：
+    //   clone(boolean):
+    //   true：复制节点 + 节点事件
+    //   false：复制节点
+    $(function () {
+        var $li = $("<li>newli</li>");
+        $('button').click(function () {
+            // 内部：
+            // $("ul").append($li);
+            // $("ul").prepend($li);
+
+            // 外部：
+            // $("ul").after($li);
+            // $("ul").before($li);
+
+            // 删除：
+            // $("li").remove(".test");
+            // $("ul").empty();
+
+            // 替换：
+            // $("div").replaceWith($li);
+
+            // 复制：
+            var li = $("li").eq(0).clone(true);
+            //   var li = $("li").eq(0).clone(false);
+            $("ul").append(li)
+
+
+        })
+
+        $("li").click(function () {
+            alert($(this).html())
+        })
+    })
+
+</script>
+
+</html>

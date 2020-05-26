@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+
+    .box-small {
+        width: 100px;
+        height: 100px;
+        background: blue;
+    }
+</style>
+
+<body>
+    <a href="https://www.baidu.com/"><span>百度</span></a>
+    <div class="box">
+        <div class="box-small"></div>
+    </div>
+
+    <form action="https://www.baidu.com/">
+        <input type="text">
+        <input type="submit" value="baidu">
+    </form>
+</body>
+
+<script>
+    $(function () {
+    //    什么是事件命名空间：当多个人编写同一个项目，绑定事件不会覆盖，所以执行时要区分谁绑定的事件。加后缀名的叫命名空间
+        $(".box-small").on("click.zs", function () {
+            alert("命名空间1")
+        })
+        $(".box-small").on("click.ls", function () {
+            alert("命名空间2")
+        })
+        // $(".box-small").trigger("click.zs");
+        
+
+        // 面试题：
+        $(".box").on("click.zs", function (){
+            alert("命名空间3")
+        })
+    //   如果执行子元素的事件 ， 如果子元素的命名空间与父元素相同，那么会像冒泡一样执行。
+    //   如果执行不带命名空间的事件，有相同类型的事件都会触发
+        // $(".box-small").trigger("click.zs");
+        $(".box-small").trigger("click");
+        
+
+
+
+
+    })
+
+
+</script>
+
+</html>

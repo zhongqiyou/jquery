@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>one
+            <span></span>
+        </li>
+        <li>two
+            <span></span>
+        </li>
+        <li>three
+            <span></span>
+        </li>
+        <li>four
+            <span></span>
+        </li>
+        <li>five
+            <span></span>
+        </li>
+    </ul>
+</body>
+<script>
+    $(function() {
+        //   siblings:当要获取当前Dom ， 使用此方法效果：除了自身其他全部获取
+        console.log($("li").eq(1).siblings())
+
+        // children 当要获取当前Dom中的子元素 ， 使用此方法效果：除了自身子元素 ， 其他的子元素全部获取
+        console.log($("li").eq(1).siblings().children())
+
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 常用入口函数
+    $(function() {
+            console.log("常用入口函数");
+        })
+        // 等到Dom节点全部加载完，直接执行。原生（onload）要等资源（图片）加载完才执行
+
+    // 有与$声明一样时 ， 可改变声明
+    var i = jQuery.noConflict();
+    i(function() {
+        console.log("改变框架名称");
+    })
+</script>
+
+</html>

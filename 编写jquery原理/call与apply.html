@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //   call(参数1 ， 参数2 ， 参数3 ，...)：修改内部的this
+                            // 参数1：指定的调用的对象
+    //   apply(参数1 ， 参数2)：修改内部的this
+                           // 参数1：指定的调用的对象
+    // call与apply区别：
+    // call：第二个参数起 ， 需要一个一个参数
+    // apply:第二参数为一个数组 ， 一个一个参数存进数组 , 进行传参;
+
+    // 下面是用对象调用array中的方法
+    var obj = {name:"zqy" , age:21}
+    var arr = [1 ,3 ,5 ,7,9]
+
+    arr.push.apply(obj , arr);
+console.log(obj);
+</script>
+
+</html>

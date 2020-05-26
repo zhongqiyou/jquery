@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .box {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+    
+    .box-small {
+        width: 100px;
+        height: 100px;
+        background: blue;
+    }
+</style>
+
+<body>
+    <a href="https://www.baidu.com/"><span>百度</span></a>
+    <div class="box">
+        <div class="box-small"></div>
+    </div>
+
+    <form action="https://www.baidu.com/">
+        <input type="text">
+        <input type="submit" value="baidu">
+    </form>
+</body>
+
+<script>
+    $(function() {
+        // 自动触发事件:
+        // 1.triger(事件类型):带有冒泡事件自动触发 / 带有默认事件自动触发 
+        // 2.trigerHandler(事件类型):不带有冒泡事件自动触发 / 不带有默认事件自动触发
+
+        // 注意：在<a>标签中 ，trigger与triggerHandler两者都是默认阻止默认事件 
+        $(".box").click(function() {
+            alert("box")
+        })
+        $(".box-small").click(function(event) {
+            alert("small")
+        })
+
+        $("a").click(function(event) {
+            alert("在默认跳转页面之前");
+        })
+
+        // 冒泡
+        // $(".box-small").trigger("click");
+        // $(".box-small").triggerHandler("click");
+
+        // 默认
+        // $("input[type='submit']").trigger("click");
+        // $("input[type='submit']").triggerHandler("click");
+
+        // 面试题：
+        // a标签特例:在<a>标签中 ，trigger与triggerHandler两者都是默认阻止默认事件
+        // 所以需要用到冒泡(子传父)来实现跳转
+        $("span").trigger("click");
+
+
+    })
+</script>
+
+</html>

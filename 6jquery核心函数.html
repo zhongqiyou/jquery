@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+</head>
+
+<body>
+    <div>封装元素</div>
+</body>
+<script>
+    // $()就带代表着jquery核心函数
+
+    // 核心函数能接收的参数：
+    // 1.接收一个函数：
+    // $(function(){
+    //     alert("接收一个函数");
+    // })
+
+    // 2.接收一个字符串（选择器、代码片段）
+    // 选择器
+    // 返回在jquery对象保存次元素
+    $(function() {
+            let body = $("body");
+            console.log(body)
+        })
+        // 代码片段
+        // 返回在jquery对象创建此元素
+    $(function() {
+            let $p = $("<p>新建元素</p>");
+            let $body = $("body");
+            //  插入body元素中
+            $body.append($p);
+            console.log($body)
+        })
+        // 3.接收一个Dom元素
+        // 把元素包装成jquery对象形式
+    $(function() {
+        let box = document.getElementsByTagName("div")[0];
+        let $box = $(box);
+        console.log($box);
+    })
+</script>
+
+</html>

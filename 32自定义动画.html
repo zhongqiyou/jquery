@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+</style>
+
+<body>
+
+    <button>执行自定义动画</button>
+    <div></div>
+</body>
+<script>
+    // animate(参数1 ， 参数2 ， 参数3 ， 参数4):自定义动画
+    //   参数1：接收一个对象，在对象里面修改css属性
+    //   参数2：设置动画时间
+    //   参数3：动画节奏 ，默认：swing
+    //   参数4：等待动画结束，回调函数
+    $(function() {
+        $("button").click(function() {
+            $("div").animate({
+                width: 100,
+                height: 100,
+                marginLeft: 100
+            }, 5000)
+        })
+    })
+</script>
+
+</html>

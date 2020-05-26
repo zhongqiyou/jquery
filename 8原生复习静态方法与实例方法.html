@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 问： 什么是静态方法？
+    // 答：直接添加到类的方法叫：“静态方法”
+    function AClass(){}
+    AClass.staticMethod = function(){alert("hello static")}
+    AClass.staticMethod();
+
+    // 问：什么是实例方法
+    // 答：通过原型添加的方法叫："实例方法"
+    AClass.prototype.inStatic = function(){alert("hello prototype")}
+    let pro = new AClass();
+    pro.inStatic();
+    console.log(AClass , pro)
+</script>
+</html>

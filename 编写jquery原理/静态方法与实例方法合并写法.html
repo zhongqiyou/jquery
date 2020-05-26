@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 静态添加
+    function A() {}
+    A.extend = function(obj) {
+
+        // console.log("静态方法");
+        for (var key in obj) {
+            this[key] = obj[key]
+        }
+    }
+    A.extend({
+            static: function() {
+                console.log("static");
+            },
+            public: function() {
+                console.log("public");
+            }
+        })
+        // console.log(A.prototype);
+
+    // A.static();
+    // A.public();
+
+    // 实例添加
+    // var a = new A();
+
+    // A.prototype.extend = function(obj){
+    //     for(var key in obj ){
+    //            this[key] = obj[key]
+    //     }
+    // }
+
+    // a.extend({
+    //     static: function () {
+    //         console.log("static");
+    //     },
+    //     public: function () {
+    //         console.log("public");
+    //     }
+    // })
+
+    // a.static();
+    // a.public();
+
+
+    // 合并写法
+    // A.extend = A.prototype.extend = function(obj){
+    //     for(var key in obj){
+    //         this[key] = obj[key]
+    //     }
+    // }
+
+    // 用类调用:添加静态方法
+    // 用实例调用：添加实例方法
+    // (function() {
+    //     var A = function () {
+    //         return new A.prototype.test();
+    //     }
+    //     A.prototype = {
+    //         constructor: function () { },
+    //         test: function () {
+    //             console.log("this is a test");
+    //         },
+    //         demo() {
+    //             console.log("dmo");
+
+    //         }
+    //     }
+    //     A.prototype.test.prototype = A.prototype;
+    //     window.A = window.$ = A;
+    // })()
+
+    //      function demo(){
+
+    //      }
+
+    //      var d = new demo();
+
+    //      console.log(demo.prototype);
+    //      console.log(d.__proto__);
+</script>
+
+</html>

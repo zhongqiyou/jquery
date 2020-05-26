@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>事件解绑</button>
+</body>
+<script>
+    // off(参数1 ， 参数2):事件移除
+    // 不传参数时:移除所有绑定事件
+    // 传一个参时：移除指定绑定类型事件
+    // 传两个参时：移除指定绑定类型事件，指定的事件
+    $(function() {
+        function demo() {
+            alert("click1")
+        }
+
+        function demo2() {
+            alert("click2")
+        }
+
+        function demo3() {
+            alert("mouseleave")
+        }
+
+        function demo4() {
+            alert("mouseenter")
+        }
+
+        $("button").click(demo)
+        $("button").click(demo2)
+        $("button").mouseleave(demo3)
+        $("button").mouseenter(demo4)
+
+        //    $("button").off()
+        $("button").off("mouseenter")
+        $("button").off("click", demo)
+    })
+</script>
+
+</html>

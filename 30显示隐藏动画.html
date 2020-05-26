@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    div {
+        width: 500px;
+        height: 500px;
+        background: yellow;
+    }
+</style>
+
+<body>
+    <div></div>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+</body>
+<script>
+    $(function() {
+        // 基本动画: show(参数1 , 参数2)\hide(参数1 , 参数2)\toggle(参数1 , 参数2)
+        //  参数1：动画时间
+        //  参数2: 动画结束回调
+
+        $("button").eq(0).click(function() {
+            $('div').show(1000, function() {
+                alert("动画结束回调");
+            })
+        })
+        $("button").eq(1).click(function() {
+            $('div').hide(1000, function() {
+                alert("动画结束回调");
+            })
+        })
+        $("button").eq(2).click(function() {
+            $('div').toggle(1000, function() {
+                alert("动画结束回调");
+            })
+        })
+    })
+</script>
+
+</html>

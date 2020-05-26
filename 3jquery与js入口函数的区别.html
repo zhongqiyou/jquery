@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+</head>
+<body>
+     <img src="https://img.alicdn.com/tfs/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png" alt="">
+</body>
+<script>
+        // window.onload = function(){
+            
+        //     let img = document.getElementsByTagName("img")[0];
+        //     let width = img.offsetWidth;
+        //     console.log("onload" , width);
+        // }
+
+        // $(document).ready(function(){
+        //     let $img = $("img");
+        //     let $width = $img.width();
+        //     console.log("ready" , $width);
+        // })
+
+        //  window.onload = function(){
+        //      alert("hello1")
+        //  }
+        //  window.onload = function(){
+        //      alert("hello2")
+        //  }
+
+        $(document).ready(function(){
+            alert("hello1")
+        })
+        $(document).ready(function(){
+            alert("hello2")
+        })
+// 区别1
+// 原生 js 与 jquery入口函数的加载模式不同
+// 原生：js会等到Dom元素加载完毕，并且图片也加载完毕才会执行
+// jQuery:会等到Dom元素加载完毕，但不会等到图片也加载完毕就会执行
+
+// 区别2
+// 原生:js如果编写了多个入口函数，后面编写的会覆盖前面编写的
+// jqeury:编写多个入口函数，后面的不会覆盖前面的
+</script>
+</html>

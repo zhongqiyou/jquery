@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    div {
+        width: 110px;
+        height: 110px;
+        border: 1px solid #000000;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <div></div>
+    <div>我是一个盒子</div>
+    <div>我是盒子</div>
+    <div><span></span></div>
+    <div>
+        <p><span></span></p>
+    </div>
+</body>
+<script>
+    $(function() {
+        // :empty作用：获取空的元素（元素中不包含子元素以及文本）
+        console.log($("div:empty"))
+
+        // :parent作用：获取元素中包含文本或者子元素的元素
+        console.log($("div:parent"));
+
+        // :contains(text)作用：获取指定文本的元素
+        console.log($("div:contains('盒子')"));
+
+        // :has(selector)作用:获取指定包含子元素的元素
+        console.log($("div:has('span')"));
+    })
+</script>
+
+</html>

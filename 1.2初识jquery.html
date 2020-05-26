@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000000;
+    }
+</style>
+
+<body>
+    <div></div>
+    <div class="box1"></div>
+    <div id="box2"></div>
+</body>
+<script>
+    // 原生固定写法
+    window.onload = function () {
+        let div1 = document.getElementsByTagName("div")[0];
+        let div2 = document.getElementsByClassName("box1")[0];
+        let div3 = document.getElementById("box2");
+        console.log(div1)
+        console.log(div2)
+        console.log(div3)
+        // div1.style.background = "red";
+        // div2.style.background = "blue";
+        // div3.style.background = "yellow";
+    }
+
+    // jQuery固定写法
+    $(document).ready(function(){
+        let div1 = $('div');
+        let div2 = $('.box1');
+        let div3 = $('#box2');
+        console.log(div1)
+        console.log(div2)
+        console.log(div3)
+        div1.css({
+            background: "red",
+            width: "200px",
+            height: "200px"
+        })
+        div2.css({
+            background: "blue"
+        })
+        div3.css({
+            background: "yellow"
+        })
+    })
+
+// 什么是jquery?
+// 答：jquery 是封装一系列原生js
+// 怎么选择jquery版本
+// 去查看大型的项目网站，例如：百度 、 京东
+// 1.x版本 支持IE 678 其余版本不支持
+
+
+
+
+</script>
+
+</html>

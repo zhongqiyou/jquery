@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="box">123</div>
+    <div class="box1">234</div>
+    <input type="checkbox" checked>
+    <script>
+     $(function(){
+        // prop/removeProp与attr/removeAttr类似
+        console.log($("div").eq(0).prop("class"));
+
+        $("div").prop("id" , "test")
+
+        $("div").eq(1).removeProp("class")
+
+        // 区别:用attr返回的是checked到值难以判断 ， 而prop返回的是boolean值
+        // attr:只能操作属性节点
+        // prop：能操作属性并属性节点
+
+       console.log( $("input").attr("checked"));
+
+       console.log( $("input").prop("checked"));
+       
+    //    推荐操作属性节点方法：
+                          //如果有表单元素（checked ， selected ， disabled） 使用prop
+                          //否则使用attr    
+
+        
+     })
+
+    </script>
+</body>
+</html>

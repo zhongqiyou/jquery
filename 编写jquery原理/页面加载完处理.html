@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>one</div>
+    <div>two</div>
+    <div>three</div>
+</body>
+<script>
+    //    1.onload:等待Dom加载完毕 以及图片一些相关加载完毕执行
+    // 缺点：等待相关资源加载完毕后执行
+    //   window.onload = function(){
+    //       let getDom = document.querySelectorAll("div");
+    //       console.log(getDom);
+    //   }
+
+    // addEventListener:等待Dom加载完毕
+    // 优点：不需要等待相关资源加载完毕后执行
+    // 缺点：低于IE9不兼容此方法
+    // 解决兼容：attachEvent() ， 虽然能解决兼容问题，但是此方法监听不了DOMContentLoaded事件；
+    //  注意：此方法不兼容其他浏览器
+    // document.attachEvent("DOMContentLoaded" , function(){
+    //     console.log("123");
+    // });
+
+    // 最终解决方案：readyState 属性:
+    // uninitialized - 还未开始载入
+    // loading - 载入中
+    // interactive - 已加载，文档与用户可以开始交互
+    // complete - 载入完成
+
+    // onreadystatechenge事件来监听
+
+    // 如果在低于ie9浏览器使用此方法
+    // document.attachEvent("onreadystatechange", function () {
+    //     if (document.readyState == "complete") {
+    //         console.log("123");
+    //     }
+    // });
+
+    // 如果在其他浏览器以及高于ie8使用此方法
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("123");
+    });
+
+
+
+</script>
+
+</html>

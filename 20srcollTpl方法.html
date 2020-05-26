@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000000;
+        word-wrap:break-word;
+        overflow: auto;
+    }
+</style>
+
+<body>
+    <div>
+        divdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdivdiv
+    </div>
+    <button>获取srcoll</button>
+    <button>设置srcoll</button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<script>
+    // scrollTop():获取与设置滚动条距离
+       $(function(){
+           var btn = document.getElementsByTagName("button");
+        //    获取滚动条距离
+           btn[0].onclick = function(){
+            //    容器
+            console.log($("div").scrollTop());
+           
+            // 窗口兼容写法
+            console.log($("html").scrollTop() + $("body").scrollTop());
+           }
+        //    设置滚动条距离
+           btn[1].onclick = function(){
+            //    容器
+            $("div").scrollTop(300)
+
+            // 窗口兼容写法
+            $("html , body").scrollTop(300)
+           }
+       })
+
+</script>
+
+</html>

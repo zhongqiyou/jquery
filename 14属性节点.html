@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="box">123</div>
+    <div class="box1">234</div>
+    <script>
+        // 什么是属性节点：在html标签中添加的属性（例如：class id）
+        // 怎么在js中查看所有属性节点:在获取元素Dom中的attributes里
+        // 操作属性节点：
+        // 原生写法：
+        // var box = document.getElementsByClassName("box1")[0];
+        // box.setAttribute("id" , "demo");
+        // console.log(box.getAttribute("id"));
+
+        // jQuery写法：
+        $(function () {
+            // attr(参数1 ， 参数2)：操作元素属性节点
+            // 写一个参数代表 取值 ， 写两个参数代表设置值
+            // 注意：
+            //      如果同时操作多个元素：
+                                    //  设置值时：会同时把多个属性节点修改
+                                    //  获取值时：只能获取到第一个属性节点的值
+            $("div:parent()").attr("name" , "test");
+            console.log($("div:parent()").attr("class"));
+
+            // removeAttr删除指定节点
+            // $("div:parent()").removeAttr("name");
+
+            // 也可以同时移除多个属性节点(以空格来区分)
+            $("div:parent()").removeAttr("name class");
+
+
+        })
+    </script>
+</body>
+
+</html>

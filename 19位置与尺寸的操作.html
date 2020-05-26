@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .box {
+        width: 200px;
+        height: 200px;
+        background: blue;
+        position: relative;
+        border: 100px solid #000000;
+    }
+    
+    .content {
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="content"></div>
+    </div>
+    <button>获取</button>
+    <button>设置</button>
+</body>
+
+<script>
+    $(function() {
+        //  width():设置与获取元素的宽度（获取不包括边框之类值）
+        //  offset():设置与获取元素与窗口偏移量
+        //  position():获取与父元素的偏移量
+        var btns = document.getElementsByTagName("button");
+        btns[0].onclick = function() {
+            // 获取width
+            console.log($(".box").width());
+
+            // 获取offset
+            console.log($(".content").offset());
+
+            // 获取position
+            console.log($(".content").position());
+
+        }
+        btns[1].onclick = function() {
+            // 设置width
+            $(".box").width("300px");
+
+            // 设置offset
+            $(".content").offset({
+                left: "100"
+            })
+
+            // position没有设置函数
+
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <button>设置html</button>
+    <button>获取html</button>
+    <button>设置text</button>
+    <button>获取text</button>
+    <button>设置表单value</button>
+    <button>获取表单中value</button>
+    <div></div>
+    <input type="text">
+</body>
+<script>
+    $(function () {
+        var btns = document.getElementsByTagName("button");
+        //  html():设置与获取（innerHTML同一效果）
+        btns[0].onclick = function () {
+            $("div").html("<p>holle world</p>");
+        }
+        btns[1].onclick = function () {
+            console.log($("div").html());
+
+        }
+
+        //  text():设置与获取（innerText同一效果）
+        btns[2].onclick = function () {
+            $("div").text("<p>holle world</p>");
+        }
+        btns[3].onclick = function () {
+            console.log($("div").text());
+        }
+
+        //  val():设置与获取表单中的value
+        btns[4].onclick = function () {
+                  $("input").val("<p>holle world</p>");
+        }
+        btns[5].onclick = function () { 
+                   console.log($("input").val());
+                   
+        }
+    })
+
+
+</script>
+
+</html>
